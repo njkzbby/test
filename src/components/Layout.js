@@ -9,9 +9,7 @@ import LoginContext from "./Context";
 const Layout = ({ children }) => {
     const [open, setOpen] = useState(false);
     const [isLogin, setIsLogin] = useState(false)
-    const handleOpen = () => {
-        setOpen(true);
-    };
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -19,9 +17,7 @@ const Layout = ({ children }) => {
     return (
 
         <LoginContext.Provider value={{ open, setOpen, isLogin, setIsLogin }}>
-            <div>
-                <Login open={open} setOpen={setOpen} handleClose={handleClose} />
-            </div>
+            <Login open={open} setOpen={setOpen} handleClose={handleClose} />
             <Header />
             {children}
             <Footer />
